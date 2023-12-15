@@ -12,7 +12,7 @@ jobs:
     runs-on: node-21
     steps:
       - name: 🎄获取仓库
-        uses: actions/checkout@v4
+        uses: https://gitee.com/actions-mirror/checkout.git
         with:
           ref: 'main'
       - name: 🖋️配置npm源
@@ -22,7 +22,7 @@ jobs:
       - name: 🌺npm构建
         run: vite build
       - name: 💪部署
-        uses: JamesIves/github-pages-deploy-action@v4.5.0
+        uses: https://gitee.com/akabc23333/github-pages-deploy-action@4.5.0
         with:
           folder: dist
           branch: gh-pages

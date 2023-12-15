@@ -7,9 +7,6 @@ on:
   # 允许手动触发
   workflow_dispatch:
 
-permissions:
-  contents: write
-
 jobs:
   build-and-deploy:
     runs-on: node-21
@@ -28,5 +25,6 @@ jobs:
         uses: http://shenjack.top:5100/adk23333/github-pages-deploy-action@v4.5.0
         with:
           folder: dist
-          branch: gh-pages
+          branch: cf-pages
+          git-config-email: $email
           ssh-key: ${{secrets.DEPLOY_KEY}}

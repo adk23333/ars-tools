@@ -11,13 +11,15 @@ jobs:
   build-and-deploy:
     runs-on: node-21
     steps:
-      - name: 获取仓库
+      - name: 🎄获取仓库
         uses: actions/checkout@v4
         with:
           ref: 'main'
-      - name: npm安装依赖
+      - name: 🖋️配置npm源
+        run: npm config set registry https://registry.npmmirror.com
+      - name: ❄️npm安装依赖
         run: npm install
-      - name: 🔧npm构建
+      - name: 🌺npm构建
         run: vite build
       - name: 💪部署
         uses: JamesIves/github-pages-deploy-action@v4.5.0

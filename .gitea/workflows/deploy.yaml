@@ -11,12 +11,12 @@ jobs:
   build-and-deploy:
     runs-on: node-21
     steps:
-      - name: 🛎️npm安装依赖
+      - name: npm安装依赖
         run: npm install
       - name: 🔧npm构建
         run: vite build
       - name: 💪部署
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: JamesIves/github-pages-deploy-action@v4.5.0
         with:
           folder: dist
           branch: gh-pages

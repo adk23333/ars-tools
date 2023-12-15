@@ -20,7 +20,7 @@ jobs:
       - name: ❄️npm安装依赖
         run: npm install
       - name: 🌺npm构建
-        run: vite build
+        run: npm run build
       - name: 💪部署
         uses: https://gitee.com/akabc23333/github-pages-deploy-action@v4.5.0
         with:

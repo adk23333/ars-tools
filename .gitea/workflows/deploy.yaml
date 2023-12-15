@@ -11,6 +11,10 @@ jobs:
   build-and-deploy:
     runs-on: node-21
     steps:
+      - name: 获取仓库
+        uses: actions/checkout@v4
+        with:
+          ref: 'main'
       - name: npm安装依赖
         run: npm install
       - name: 🔧npm构建

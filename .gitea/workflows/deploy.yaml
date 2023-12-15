@@ -22,7 +22,7 @@ jobs:
       - name: 🌺npm构建
         run: vite build
       - name: 💪部署
-        uses: http://shenjack.top:5100/adk23333/github-pages-deploy-action@4.5.0
+        uses: https://gitee.com/akabc23333/github-pages-deploy-action@v4.5.0
         with:
           folder: dist
           branch: gh-pages

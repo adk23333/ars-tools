@@ -29,3 +29,4 @@ jobs:
         with:
           folder: dist
           branch: gh-pages
+          ssh-key: ${{secrets.DEPLOY_KEY}}

@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const serviceAxios = axios.create({
-  baseURL: 'http://localhost:3000', // 基础请求地址
+  baseURL: import.meta.env.BASE_URL, // 基础请求地址
   timeout: 10000, // 请求超时设置
   withCredentials: false, // 跨域请求是否需要携带 cookie
 });

@@ -32,7 +32,7 @@
 
           <div class="text-end">
             <v-btn
-              href="/rmm"
+              to="/rmm"
               class="text-none"
               color="success"
               rounded

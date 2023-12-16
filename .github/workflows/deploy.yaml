@@ -1,5 +1,5 @@
 name: ARS Tools Deploy
-run-name: ✨${{ gitea.actor }} is deploy ars-tools pages
+run-name: ✨${{ github.actor }} is deploy ars-tools pages
 on:
   push:
     branches: [ "main" ]
@@ -9,7 +9,12 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: node-21
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [ 18.x, 20.x ]
+
     steps:
       - name: 🎄获取仓库
         uses: actions/checkout@v4

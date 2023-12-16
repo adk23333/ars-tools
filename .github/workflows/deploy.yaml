@@ -1,8 +1,8 @@
 name: ARS Tools Deploy
 run-name: ✨${{ gitea.actor }} is deploy ars-tools pages
 on:
-#  push:
-#    branches: [ "main" ]
+  push:
+    branches: [ "main" ]
 
   # 允许手动触发
   workflow_dispatch:
@@ -12,7 +12,7 @@ jobs:
     runs-on: node-21
     steps:
       - name: 🎄获取仓库
-        uses: checkout@v4
+        uses: actions/checkout@v4
         with:
           ref: 'main'
       - name: ❄️npm安装依赖
@@ -20,7 +20,7 @@ jobs:
       - name: 🌺npm构建
         run: npm run build
       - name: 💪部署
-        uses: github-pages-deploy-action@v4.5.0
+        uses: JamesIves/github-pages-deploy-action@v4.5.0
         with:
           folder: dist
           branch: cf-pages

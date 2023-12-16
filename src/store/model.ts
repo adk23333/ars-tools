@@ -5,11 +5,20 @@ export class ReadmeItems {
   author: string = ''
   profile: string = ''
   links: string[][] = [['', '']]
-  lang: string = McLang.JAVA
+  lang: string = McVersion.JAVA.name
   versions: string[] = []
-  elect_type: string = McElectType.Logic
+  elect_type: string = McElectType.Logic.name
   delay: number[] = [1, 5]
   size: number[] = [1, 1, 1]
+
+  links2yaml() {
+    let s: string = '['
+    this.links.forEach((value) => {
+      s += `[${value[0]}, ${value[1]}],`
+    })
+    s += ']'
+    return s
+  }
 
   links2strs() {
     let t: string[] = []
@@ -46,62 +55,71 @@ export class ReadmeItems {
   }
 }
 
-export class McLang {
-  static JAVA: string = 'JAVA'
-  static BE: string = 'BE'
+export const McVersion = {
+  JAVA: {
+    name: 'JAVA',
+    versions: [
+      '1.20',
+      '1.19',
+      '1.18',
+      '1.17',
+      '1.16',
+      '1.15',
+      '1.14',
+      '1.13',
+      '1.12',
+      '1.11',
+      '1.10',
+      '1.9',
+      '1.8',
+      '1.7',
+      '1.6',
+      '1.5',
+      '1.4',
+      '1.3',
+      '1.2',
+      '1.1',
+      '1.0',
+    ]
+  },
+  BE: {
+    name: 'BE',
+    versions: [
+      '1.20',
+      '1.19',
+      '1.18',
+      '1.17',
+      '1.16',
+      '1.14',
+      '1.13',
+      '1.12',
+      '1.11',
+      '1.10',
+      '1.9',
+      '1.8',
+      '1.7',
+      '1.6',
+      '1.5',
+      '1.4',
+      '1.3',
+      '1.2',
+      '1.1',
+      '1.0'
+    ]
+  }
 }
 
-export class McVersion {
-  static JAVA: string[] = [
-    '1.20',
-    '1.19',
-    '1.18',
-    '1.17',
-    '1.16',
-    '1.15',
-    '1.14',
-    '1.13',
-    '1.12',
-    '1.11',
-    '1.10',
-    '1.9',
-    '1.8',
-    '1.7',
-    '1.6',
-    '1.5',
-    '1.4',
-    '1.3',
-    '1.2',
-    '1.1',
-    '1.0',
-  ]
-  static BE: string[] = [
-    '1.20',
-    '1.19',
-    '1.18',
-    '1.17',
-    '1.16',
-    '1.14',
-    '1.13',
-    '1.12',
-    '1.11',
-    '1.10',
-    '1.9',
-    '1.8',
-    '1.7',
-    '1.6',
-    '1.5',
-    '1.4',
-    '1.3',
-    '1.2',
-    '1.1',
-    '1.0'
-  ]
-}
-
-export class McElectType {
-  static Logic: string = '逻辑'
-  static Arithmetic: string = '算术'
-  static Analog: string = '模拟'
-  static Hybrid: string = '混合'
+export const McElectType = {
+  Logic: {
+    name: '逻辑',
+  },
+  Arithmetic: {
+    name: '算术',
+  },
+  Analog: {
+    name: '模拟',
+  },
+  Hybrid: {
+    name: '混合',
+  },
 }

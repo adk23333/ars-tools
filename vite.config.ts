@@ -35,7 +35,7 @@ export default defineConfig({
     },
     extensions: ['.js', '.json', '.jsx', '.mjs', '.ts', '.tsx', '.vue'],
   },
-  base: process.env.NODE_ENV === 'production' ? '/ars-tools/' : '/',
+  // base: process.env.NODE_ENV === 'production' ? '/ars-tools/' : '/',
   server: {
     port: 3000,
   },
